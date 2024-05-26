@@ -1,8 +1,3 @@
-<!-- src/Footer.svelte -->
-<script>
-	// Aquí puedes añadir lógica si es necesario en el futuro
-</script>
-
 <footer>
 	<div class="footer-content">
 		<div class="social-links">
@@ -15,19 +10,22 @@
 			<a href="https://instagram.com" target="_blank" aria-label="Instagram">
 				<i class="fab fa-instagram"></i>
 			</a>
-			<a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-				<i class="fab fa-linkedin"></i>
+			<a href="tel:529613731566" target="_blank" aria-label="WhatsApp">
+				<i class="fab fa-whatsapp"></i>
+			</a>
+            <a href="https://tiktok.com" target="_blank" aria-label="TikTok">
+				<i class="fab fa-tiktok"></i>
 			</a>
 		</div>
 		<div class="footer-links">
-			<a href="#about">Acerca</a>
-			<a href="#services">Servicios</a>
+			<a href="/about">Acerca</a>
+			<a href="/services">Servicios</a>
 			<a href="#privacy">Privacidad</a>
 			<a href="#terms">Términos</a>
 			<a href="#contact">Contacto</a>
 		</div>
 	</div>
-	<p>&copy; {new Date().getFullYear()} Mi Empresa. Todos los derechos reservados.</p>
+	<p>&copy; {new Date().getFullYear()} RyC. Todos los derechos reservados.</p>
 </footer>
 
 <style>

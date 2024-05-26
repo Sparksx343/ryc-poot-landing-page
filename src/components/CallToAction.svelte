@@ -1,10 +1,11 @@
-<!-- src/CallToActionSection.svelte -->
 <script>
 </script>
 
 <section class="cta">
 	<h2>Comienza Hoy</h2>
-	<button>Regístrate Ahora</button>
+	<a href="tel:9613731566">
+		<button>Programa una cita</button></a
+	>
 </section>
 
 <style>

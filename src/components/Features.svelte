@@ -1,43 +1,71 @@
-<!-- src/FeaturesSection.svelte -->
 <script>
+	import easy from '../assets/easy.webp';
+	import fast from '../assets/fast.webp';
+	import support from '../assets/support.webp';
+	import realtimenotify from '../assets/realtimenotify.webp';
 </script>
 
 <section class="features">
-	<h2>Características y Beneficios</h2>
+	<h2>¿Por qué elegirnos?</h2>
 	<div class="feature-row">
 		<div class="feature">
-			<img src="https://via.placeholder.com/100" alt="Feature 1" />
-			<h3>Fácil Inscripción</h3>
+			<img src={easy} alt="Feature 1" />
+			<h3>Proceso Simplificado</h3>
 			<p>
-				Fácil inscripción para ti y tus familiares, garantizando derechohabiencia en caso de
-				enfermedades o accidentes.
+				Nuestro sistema intuitivo te guía paso a paso, eliminando la confusión y los errores
+				comunes. Con instrucciones claras y directas, te aseguramos que completarás tu afiliación
+				sin complicaciones.
 			</p>
 		</div>
 		<div class="feature">
-			<img src="https://via.placeholder.com/100" alt="Feature 2" />
-			<h3>Incapacidad Cubierta</h3>
+			<img src={fast} alt="Feature 2" />
+			<h3>Ahorro de Tiempo</h3>
 			<p>
-				Incapacidad laboral cubierta, así como prestaciones financieras como jubilación y fondo de
-				retiro.
+				Sabemos que tu tiempo es valioso. Por eso, nuestro servicio está diseñado para que realices
+				tu afiliación en cuestión de minutos, evitando largas esperas y trámites innecesarios.
 			</p>
 		</div>
 		<div class="feature">
-			<img src="https://via.placeholder.com/100" alt="Feature 3" />
-			<h3>Acumulación de Puntos</h3>
-			<p>Acumula puntos para el INFONAVIT con nuestro servicio adicional.</p>
+			<img src={support} alt="Feature 3" />
+			<h3>Soporte Profesional</h3>
+			<p>
+				No estás solo. Nuestro equipo de expertos está siempre disponible para asistirte en cada
+				etapa del proceso. Ya sea a través de chat en vivo, correo electrónico o teléfono, estamos
+				aquí para resolver tus dudas y asegurarnos de que tu experiencia sea fluida.
+			</p>
+		</div>
+		<div class="feature">
+			<img src={realtimenotify} alt="Feature 3" />
+			<h3>Actualizaciones en Tiempo Real</h3>
+			<p>
+				Mantente informado en cada paso del proceso. Recibirás notificaciones en tiempo real sobre
+				el estado de tu solicitud, desde la recepción de documentos hasta la confirmación final de
+				tu afiliación.
+			</p>
 		</div>
 	</div>
 </section>
 
 <style>
+	:root {
+		--primary-color: #2c3e50;
+		--secondary-color: #2c3e50;
+		--bg-color: #ecf0f1;
+		--text-color: #2c3e50;
+		--border-radius: 10px;
+		--box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+
 	.features {
 		padding: 4rem 2rem;
+		background-color: var(--bg-color);
 		text-align: center;
 	}
 
 	.features h2 {
-		font-size: 2rem;
-		margin-bottom: 2rem;
+		font-size: 2.5rem;
+		color: var(--primary-color);
+		margin-bottom: 3rem;
 	}
 
 	.feature-row {
@@ -48,29 +76,41 @@
 	}
 
 	.feature {
-		flex: 1 1 calc(33.333% - 2rem);
+		flex: 1 1 calc(20% - 2rem);
 		box-sizing: border-box;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		padding: 1rem;
-		background: #f9f9f9;
-		border-radius: 8px;
+		padding: 2rem;
+		background: white;
+		border-radius: var(--border-radius);
+		box-shadow: var(--box-shadow);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.feature:hover {
+		transform: translateY(-10px);
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 	}
 
 	.feature img {
-		max-width: 100px;
-		margin-bottom: 1rem;
+		max-width: 100%;
+		height: auto;
+		margin-bottom: 1.5rem;
+		border-radius: var(--border-radius);
 	}
 
 	.feature h3 {
-		font-size: 1.5rem;
+		font-size: 1.75rem;
+		color: var(--secondary-color);
 		margin-bottom: 1rem;
 	}
 
 	.feature p {
 		font-size: 1rem;
+		color: var(--text-color);
+		line-height: 1.6;
 	}
 
 	@media (max-width: 768px) {
