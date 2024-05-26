@@ -1,35 +1,42 @@
-<!-- src/Header.svelte -->
 <script>
+	import logo from '../assets/logo.png';
+	import { goto } from '$app/navigation';
 	let menuOpen = false;
 
 	function toggleMenu() {
 		menuOpen = !menuOpen;
 	}
+	function goToHome(){
+		goto('/')
+	}
 </script>
 
 <header>
-	<div class="logo">
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<!-- svelte-ignore a11y-no-static-element-interactions -->
+	<div class="logo" on:click={goToHome} >
+		<img src={logo} alt="Logo" class="logo"/>
 		<h1>Toop</h1>
 	</div>
 	<button class="menu-button" on:click={toggleMenu}>
 		<i class="fas fa-bars"></i>
 	</button>
 	<nav class={menuOpen ? 'open' : ''}>
-		<a href="#home">
+		<a href="tel:9613731566">
+			<i class="fas fa-phone"></i>
+			(961) - 3731 - 566</a
+		>
+		<a href="/">
 			<i class="fas fa-home"></i>
 			Inicio
 		</a>
-		<a href="#about">
-			<i class="fas fa-info-circle"></i>
-			Acerca
-		</a>
-		<a href="#services">
+		<a href="/services">
 			<i class="fas fa-concierge-bell"></i>
 			Servicios
 		</a>
-		<a href="#contact">
-			<i class="fas fa-envelope"></i>
-			Contacto
+		<a href="/about">
+			<i class="fas fa-info-circle"></i>
+			Acerca
 		</a>
 	</nav>
 </header>
@@ -45,7 +52,15 @@
 		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 		position: relative;
 	}
-
+	.logo {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+	}
+	.logo > img {
+		height: 40px;
+		margin-right: 20px;
+	}
 	.logo h1 {
 		margin: 0;
 		font-size: 1.8rem;
@@ -86,6 +101,11 @@
 		color: white;
 	}
 
+	@media (max-width: 300px) {
+		.logo > img {
+			display: none;
+		}
+	}
 	@media (max-width: 768px) {
 		nav {
 			display: none;
@@ -111,8 +131,9 @@
 
 		nav.open {
 			display: flex;
-			max-height: 300px; /* Adjust based on the number of links */
+			max-height: 300px;
 			opacity: 1;
 		}
 	}
+
 </style>

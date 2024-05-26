@@ -1,22 +1,37 @@
-<!-- src/HeroSection.svelte -->
 <script>
+	function hideScrollIndicator() {
+		const indicator = document.querySelector('.scroll-indicator');
+		if (indicator) {
+			// @ts-ignore
+			indicator.style.display = 'none';
+		}
+	}
+	if (typeof window !== 'undefined') {
+		window.addEventListener('scroll', hideScrollIndicator);
+	}
 </script>
-
 <section class="hero">
 	<div class="overlay"></div>
 	<div class="content">
 		<h1>Inscríbete al IMSS Fácil y Rápido</h1>
 		<p>
-			Ofrecemos un servicio ágil para el registro al IMSS por una cuota mensual. Protege a tus
-			familiares y asegúrate un futuro seguro con nuestras prestaciones.
+			En Toop, nos especializamos en hacer que el proceso de afiliación al IMSS sea fácil, rápido y sin complicaciones.
 		</p>
-		<button>Regístrate Ahora</button>
+		<a href="tel:9613731566">
+			<button>Programa una cita</button></a
+		>
+		
 	</div>
 </section>
+<div class="scroll-indicator">
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<!-- svelte-ignore a11y-no-static-element-interactions -->
+	<i class="fas fa-chevron-down"></i>
+</div>
 
 <style>
 	.hero {
-		background: url('https://www.metlifemas.com.mx/content/dam/metlifecom/mxmas/img/home/home_metlife_mas.jpg')
+		background: url('../assets/fam.webp')
 			no-repeat center center/cover;
 		color: white;
 		padding: 4rem 2rem;
@@ -25,7 +40,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		min-height: 70vh;
+		min-height: 80vh;
 		position: relative;
 	}
 
@@ -40,6 +55,7 @@
 
 	.content {
 		position: relative;
+		top: 110px;
 		z-index: 1;
 	}
 
@@ -67,5 +83,31 @@
 
 	.hero button:hover {
 		background-color: #e00070;
+	}
+	.scroll-indicator {
+		position: fixed;
+		bottom: 1rem;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 2rem;
+		color: white;
+		animation: bounce 1.5s infinite;
+		z-index: 100;
+		cursor: pointer;
+	}
+	@keyframes bounce {
+		0%,
+		20%,
+		50%,
+		80%,
+		100% {
+			transform: translateY(0);
+		}
+		40% {
+			transform: translateY(-10px);
+		}
+		60% {
+			transform: translateY(-5px);
+		}
 	}
 </style>
